@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 
 # Load the trained model
-model = joblib.load('performance_model.joblib')
+model = joblib.load('cpu_performance_model.joblib')
 
 # --- Web App Title and Description ---
 st.title('Performance Demo Simulator')
