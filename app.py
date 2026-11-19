@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 
 # Load the trained model
-model = joblib.load('cpu_performance_model.joblib')
+model = joblib.load('performance_model.joblib')
 
 # --- Web App Title and Description ---
 st.title('Performance Demo Simulator')
@@ -14,12 +14,12 @@ Adjust the sliders to see the model's prediction for the final performance score
 """)
 
 # --- Create sliders for user input in the sidebar ---
-st.sidebar.header('CPU Design Parameters')
+st.sidebar.header('Design Parameters')
 
-at = st.sidebar.slider('Core Temperature (AT)', min_value=1.0, max_value=38.0, value=19.65, step=0.1)
-v = st.sidebar.slider('L3 Cache Size (V)', min_value=25.0, max_value=82.0, value=54.3, step=0.1)
-ap = st.sidebar.slider('Core Voltage (AP)', min_value=990.0, max_value=1035.0, value=1013.25, step=0.1)
-rh = st.sidebar.slider('Memory Bus Speed (RH)', min_value=25.0, max_value=100.0, value=73.3, step=0.1)
+at = st.sidebar.slider('AT: Ambient Temperature', min_value=1.0, max_value=38.0, value=19.65, step=0.1)
+v = st.sidebar.slider('V: Exhuast Vacuum', min_value=25.0, max_value=82.0, value=54.3, step=0.1)
+ap = st.sidebar.slider('AP: Ambient Pressure in Millibard', min_value=990.0, max_value=1035.0, value=1013.25, step=0.1)
+rh = st.sidebar.slider('RH: Relative Humidity', min_value=25.0, max_value=100.0, value=73.3, step=0.1)
 
 # --- Make a prediction ---
 # Put the inputs into a numpy array
