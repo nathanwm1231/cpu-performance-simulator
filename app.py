@@ -7,7 +7,7 @@ import pandas as pd
 model = joblib.load('cpu_performance_model.joblib')
 
 # --- Web App Title and Description ---
-st.title('Pre-Silicon CPU Performance Simulator')
+st.title('Performance Demo Simulator')
 st.write("""
 This app simulates the performance of a CPU design based on key architectural parameters.
 Adjust the sliders to see the model's prediction for the final performance score.
